@@ -22,6 +22,21 @@ app.components.rateService = (function() {
     return names[code.toLowerCase()];
   };
 
+  var getProjectUrlFromCode = function(code) {
+    var urls = {
+      btc: 'https://bitcoin.org',
+      dash: 'https://www.dash.org',
+      bts: 'https://bitshares.org',
+      eth: 'https://www.ethereum.org',
+      ltc: 'https://litecoin.org',
+      xmr: 'https://getmonero.org/home',
+      xrp: 'https://ripple.com',
+      zec: 'https://z.cash'
+    };
+
+    return urls[code.toLowerCase()];
+  };
+
   var loadRates = function(base, coins) {
     var checkForErrors = function(results) {
       var errors = results.filter(function(result) {
@@ -60,7 +75,8 @@ app.components.rateService = (function() {
           icon: ticker.base.toLowerCase() + '.svg',
           name: getNameFromCode(ticker.base),
           price: getCurrencySymbol(base) + price.toFixed(2),
-          change: parseFloat(ticker.change).toFixed(2)
+          change: parseFloat(ticker.change).toFixed(2),
+          url: getProjectUrlFromCode(ticker.base.toLowerCase())
         };
       });
 

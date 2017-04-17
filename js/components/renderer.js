@@ -15,7 +15,7 @@ app.components.renderer = (function() {
 
     var $row = $('<section>').addClass('rate');
 
-    var $icon = $('<div>').addClass('icon');
+    var $icon = $('<a>').attr('href', record.url).attr('target', '_blank').addClass('icon');
     $icon.append($('<img>').attr('src', 'img/coins/' + record.icon));
     $row.append($icon);
 

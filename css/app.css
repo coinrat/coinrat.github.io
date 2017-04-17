@@ -175,6 +175,7 @@ section.rate .icon {
   float: left;
   border-right: solid 1px #eee;
   padding-right: 15px;
+  text-decoration: none;
 }
 
 section.rate .icon img {
@@ -187,6 +188,7 @@ section.rate .metric {
   padding: 0 15px;
   font-weight: 300;
   border-right: solid 1px #eee;
+  text-align: center;
 }
 
 section.rate .metric.last {
@@ -322,6 +324,7 @@ section.tip .address {
     border-bottom: solid 1px #eee;
     padding: 35px 0;
     overflow: hidden;
+    text-align: center;
   }
 
   section.rate .icon {
