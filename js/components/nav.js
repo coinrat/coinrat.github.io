@@ -32,7 +32,7 @@ app.components.nav = (function() {
 
     var base = localStorage.getItem('base');
 
-    if (base) {
+    if (['usd', 'gbp', 'eur'].indexOf(base) !== -1) {
       clearSelected();
       $('#' + base).addClass('selected');
     }
