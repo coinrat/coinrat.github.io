@@ -2,12 +2,6 @@
 
 app.components.rateService = (function() {
   var data = [];
-  var $coins;
-
-  var init = function() {
-    $coins = $('#coins');
-    loadRates('usd', parseFloat($coins.val()));
-  };
 
   var getCurrencySymbol = function(base) {
     return { usd: '$', eur: '€', gbp: '£' }[base.toLowerCase()];
@@ -96,7 +90,6 @@ app.components.rateService = (function() {
   };
 
   return {
-    init: init,
     loadRates: loadRates
   };
 })();

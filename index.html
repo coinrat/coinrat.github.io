@@ -35,7 +35,7 @@
 
     <section class="amount">
       <div class="left">
-        Based on <input value="1" id="coins"> coin(s)
+        Based on <input id="coins"> coin(s)
       </div>
 
       <div class="right">
@@ -67,6 +67,21 @@
 
   <script type="text/javascript">
     $(app.init);
+  </script>
+
+  <script type="text/javascript">
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '58f43c47bb922a6f8b02e206');
+      t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+      t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
   </script>
 </body>
 </html>

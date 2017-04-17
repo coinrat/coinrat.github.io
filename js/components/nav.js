@@ -4,7 +4,6 @@ app.components.nav = (function() {
   var $usd;
   var $gbp;
   var $eur;
-  var $coins;
 
   var clearSelected = function() {
     $usd.removeClass('selected');
@@ -16,22 +15,41 @@ app.components.nav = (function() {
     return $('.moving-slider .selected').attr('id');
   };
 
+  var getCoinsValue = function() {
+    var coins = parseFloat($('#coins').val());
+    return isNaN(coins) ? 1 : coins;
+  };
+
   var reload = function() {
-    var base = getSelectedBaseCurrency();
-    var coins = parseFloat($coins.val());
+    app.components.rateService.loadRates(getSelectedBaseCurrency(), getCoinsValue());
+    rememberInput();
+  };
 
-    if (isNaN(coins)) {
-      coins = 1;
+  var loadRememberedValues = function() {
+    var coins = localStorage.getItem('coins');
+
+    $('#coins').val(coins || 1);
+
+    var base = localStorage.getItem('base');
+
+    if (base) {
+      clearSelected();
+      $('#' + base).addClass('selected');
     }
+  };
 
-    app.components.rateService.loadRates(base, coins);
+  var rememberInput = function() {
+    localStorage.setItem('base', getSelectedBaseCurrency());
+    localStorage.setItem('coins', getCoinsValue());
   };
 
   var init = function() {
     $usd = $('#usd');
     $gbp = $('#gbp');
     $eur = $('#eur');
-    $coins = $('#coins');
+
+    loadRememberedValues();
+    reload();
 
     $usd.on('click', function(e) {
       e.preventDefault();
@@ -57,6 +75,16 @@ app.components.nav = (function() {
     $('#update').on('click', function(e) {
       e.preventDefault();
       reload();
+    });
+
+    $('#coins').on('keypress', function(e) {
+      var keycode = e.keyCode ? e.keyCode : e.which;
+
+      if (keycode === 13) {
+        e.preventDefault();
+        $(this).blur();
+        reload();
+      }
     });
   };
 
