@@ -1,0 +1,333 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+  color: #222;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+a {
+  text-decoration: none;
+  color: #476172;
+}
+
+header {
+  margin-top: 30px;
+}
+
+nav {
+  overflow: hidden;
+}
+
+nav .logo {
+  float: left;
+  padding: 0 10px;
+}
+
+nav .logo img {
+  width: 50px;
+}
+
+nav .logo:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+nav .moving-slider {
+  float: right;
+}
+
+nav .moving-slider a {
+  font-weight: 200;
+  font-size: 16px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0;
+  width: 80px;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+nav .moving-slider a.one.selected ~ hr {
+  margin-left: 10px;
+}
+
+nav .moving-slider a.two.selected ~ hr {
+  margin-left: 90px;
+}
+
+nav .moving-slider a.three.selected ~ hr {
+  margin-left: 180px;
+}
+
+nav .moving-slider a.one:hover ~ hr {
+  margin-left: 10px;
+}
+
+nav .moving-slider a.two:hover ~ hr {
+  margin-left: 90px;
+}
+
+nav .moving-slider a.three:hover ~ hr {
+  margin-left: 180px;
+}
+
+nav .moving-slider a:hover {
+  color: #476172;
+}
+
+nav .moving-slider hr {
+  background: #476172;
+  width: 60px;
+  height: .20rem;
+  margin: 0 0 0 10px;
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.loading .message-main {
+  text-align: center;
+  font-weight: 400;
+  font-size: 22px;
+  padding: 5px 0;
+}
+
+.loading .message-sub {
+  text-align: center;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+section.amount {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding: 15px;
+  font-weight: 200;
+  font-size: 18px;
+  background: #f4f4f4;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+section.amount .left {
+  float: left;
+}
+
+section.amount .right {
+  padding: 10px 0;
+  float: right;
+}
+
+section.amount .right a {
+  padding: 10px;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  color: #999;
+}
+
+section.amount .right a:hover {
+  border: solid 1px #444;
+  color: #222;
+  cursor: pointer;
+}
+
+section.amount input {
+  background: #fff;
+  border: solid 1px #e8e8e8;
+  border-radius: 2px;
+  outline: none;
+  padding: 10px;
+  font-size: 14px;
+  width: 35px;
+  text-align: center;
+  margin: 0 3px;
+}
+
+section.rate {
+  border-bottom: solid 1px #eee;
+  padding: 15px 0;
+  overflow: hidden;
+}
+
+section.rate .icon {
+  float: left;
+  border-right: solid 1px #eee;
+  padding-right: 15px;
+}
+
+section.rate .icon img {
+  width: 45px;
+}
+
+section.rate .metric {
+  float: left;
+  width: 150px;
+  padding: 0 15px;
+  font-weight: 300;
+  border-right: solid 1px #eee;
+}
+
+section.rate .metric.last {
+  border-right: none;
+}
+
+section.rate .metric .label {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 12px;
+  color: #bbb;
+  padding-bottom: 5px;
+}
+
+section.rate .metric .value {
+  font-weight: 200;
+  font-size: 22px;
+  color: #333;
+}
+
+section.rate .metric .value.up {
+  color: #77dd77;
+}
+
+section.rate .metric .value.down {
+  color: #dd7777;
+}
+
+section.rate .metric .value span {
+  font-size: 18px;
+}
+
+section.tip {
+  padding-top: 40px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 200;
+  font-size: 13px;
+  color: #999;
+}
+
+section.tip .text {
+  display: block;
+}
+
+section.tip .address {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  background: url('../img/dash.svg') 0 11px no-repeat;
+  background-size: 20px;
+  padding: 10px 0 10px 25px;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto 20px auto;
+  background-color: #476172;
+
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@media (max-width: 675px) {
+  nav .logo {
+    float: none;
+    display: block;
+  }
+
+  nav .moving-slider {
+    margin-top: 10px;
+    float: none;
+    display: block;
+  }
+
+  section.rate {
+    border-bottom: solid 1px #eee;
+    padding: 35px 0;
+    overflow: hidden;
+  }
+
+  section.rate .icon {
+    float: none;
+    text-align: center;
+    border: none;
+    padding: 0;
+  }
+
+  section.rate .icon img {
+    width: 80px;
+  }
+
+  section.rate .metric {
+    float: none;
+    text-align: center;
+    border: none;
+    padding-top: 15px;
+    margin: 0 auto;
+    width: auto;
+  }
+
+  section.rate .metric .label {
+    font-size: 15px;
+  }
+
+  section.rate .metric .value {
+    font-size: 24px;
+  }
+}

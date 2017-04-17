@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="227px" height="227px" viewBox="0 0 227 227" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>XMR_2_</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DASH" transform="translate(0.000000, -39.000000)" fill="#476172">
+            <g id="XMR" transform="translate(0.000000, 39.000000)">
+                <g id="Layer_1">
+                    <g id="XMR_2_">
+                        <path d="M39.722,149.021 L39.722,53.871 L113.463,127.612 L187.132,53.943 L187.132,149.022 L221.068,149.022 C224.767,137.829 226.777,125.867 226.777,113.432 C226.777,50.832 176.031,0.085 113.43,0.085 C50.83,0.085 0.083,50.832 0.083,113.432 C0.083,125.867 2.091,137.828 5.792,149.022 L39.722,149.022 L39.722,149.021 Z" id="Shape"></path>
+                        <path d="M162.54,172.077 L162.54,111.925 L113.045,161.42 L63.897,112.272 L63.897,172.078 L16.417,172.078 C36.281,204.864 72.296,226.778 113.43,226.778 C154.565,226.778 190.579,204.864 210.443,172.078 L162.54,172.078 L162.54,172.077 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
