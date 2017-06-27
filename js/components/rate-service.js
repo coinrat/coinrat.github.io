@@ -89,20 +89,35 @@ app.components.rateService = (function() {
       return 'https://api.cryptonator.com/api/full/' + crypto + '-' + fiat;
     };
 
+    var delay = 0;
+
+    var get = function(url) {
+      delay += 500;
+
+      return new Promise(function(resolve) {
+        setTimeout(function() {
+          resolve(axios.get(url));
+        }, delay);
+      });
+    };
+
     var requests = [
-      axios.get(getPairUrl('btc', base)),
-      axios.get(getPairUrl('eth', base)),
-      axios.get(getPairUrl('dash', base)),
-      axios.get(getPairUrl('xrp', base)),
-      axios.get(getPairUrl('ltc', base)),
-      axios.get(getPairUrl('xmr', base)),
-      axios.get(getPairUrl('zec', base)),
-      axios.get(getPairUrl('bts', base))
+      get(getPairUrl('btc', base)),
+      get(getPairUrl('eth', base)),
+      get(getPairUrl('dash', base)),
+      get(getPairUrl('xrp', base)),
+      get(getPairUrl('ltc', base)),
+      get(getPairUrl('xmr', base)),
+      get(getPairUrl('zec', base)),
+      get(getPairUrl('bts', base))
     ];
 
-    return axios.all(requests).then(function(results) {
-      return callback(null, results);
-    }).catch(callback);
+    return axios
+      .all(requests)
+      .then(function(results) {
+        return callback(null, results);
+      })
+      .catch(callback);
   };
 
   return {
